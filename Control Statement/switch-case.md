@@ -81,5 +81,5 @@ public static void main(String[]args {
         System.out.println("현재 계절은 " + session + " 입니다.");
     }
 ```
-default 를 지정해주지 않을 경우 java: the switch expression does not cover all possible input values 오류가 뜬다. <br>
-또는 String session 값으로 리턴값을 받는다고 하였기 때문에 yield 로 반드시 리턴을 해주어야 한다. 그러지 않을 경우 이때도 java: the switch expression does not cover all possible input values 가 뜬다. 
+- default 를 지정해주지 않을 경우 java: the switch expression does not cover all possible input values 오류가 뜬다.
+- 또는 String session 값으로 리턴값을 받는다고 하였기 때문에 yield 로 반드시 리턴을 해주어야 한다. 그러지 않을 경우 이때도 java: the switch expression does not cover all possible input values 가 뜬다. 
