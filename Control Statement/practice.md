@@ -31,6 +31,9 @@ public class Main {
         int num = 1;
 
         for (; dan <= 9; dan++) {
+            if (dan % 2 != 0) {
+                continue;
+            }
             for (; num <= 9; num++) {
                 int result = dan * num;
                 System.out.println(result);
@@ -67,6 +70,9 @@ num 의 값을 1로 초기화 시켜주도록 수정해주면 문제가 해결�
 
 
         for (; dan <= 9; dan++) {
+            if (dan % 2 != 0) {
+                continue;
+            }
             for (num = 1; num <= 9; num++) {  //num의값을 초기화시켜주었다.
                 int result = dan * num;
                 System.out.println(result);
