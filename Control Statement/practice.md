@@ -19,3 +19,25 @@
       System.out.println(grade);
   }
 ```
+
+```
+ 구구단을 짝수단만 출력하도록 프로그램을 만들어보세요.(continue문 사용) 
+```
+```java 오류코드
+public class Main {
+    public static void main(String[] args) {
+        int dan = 2;
+        int num = 1;
+
+        for (; dan <= 9; dan++) {
+            for (; num <= 9; num++) {
+                int result = dan * num;
+                System.out.println(result);
+            }
+        }
+
+        System.out.println(dan);
+        System.out.println(num);
+    }
+}
+```
