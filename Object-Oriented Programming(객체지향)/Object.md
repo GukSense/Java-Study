@@ -36,3 +36,24 @@
     private orderDate;
   }
   ```
+<br><b>성적확인을 위해 학사관리 시스템에 로그인하여 수강한 과목들의 성적을 확인했다.<br>
+```java
+public class Student {
+  private int studentId;
+  private String name;
+  private String password;
+  private int majorCode;
+  private int grade;
+}
+```
+```java
+  public class Major {
+    private String name;
+    private String category;
+    private int date;
+  }
+```
+
+- 객체를 정의한다
+- 객체의 속성을 멤버변수로, 역할을 메서드로 구현
+- 각 객체간의 협력을 구현한다.
