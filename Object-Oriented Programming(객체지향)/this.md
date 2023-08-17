@@ -40,11 +40,11 @@ class Tv {
   } 
 }
 public class main {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
       Tv t = new Tv();
       System.out.println(t.name);
       System.out.println(t.price);
-    }
+  }
 }
 ```
 - 출력 결과
