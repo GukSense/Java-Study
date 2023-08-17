@@ -45,7 +45,7 @@ public class main {
       System.out.println(t.name);
       System.out.println(t.price);
     }
-  }
+}
 ```
 - 출력 결과
   ```
