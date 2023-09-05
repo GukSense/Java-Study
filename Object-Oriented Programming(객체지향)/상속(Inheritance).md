@@ -14,7 +14,8 @@ class B extends A {
 - 상속은 하나만 받을 수 있다. 다중상속은 불가능하다
   - ex) class B extends A,B,C <-- X
 - 상속은 "IS-A" 관계를 성립되어야한다. 하위 클래스는 상위 클래스의 한 유형이거나 하위 유형이어야한다.
-  - ex) 말티즈는 개다. <--- 부모:개 자식:말티즈
+  - ex) 말티즈는 개다. <--- 부모:개 자식:말티즈 ![image](https://github.com/GukSense/Java-Study/assets/101082667/a352e356-c8b8-47c0-ab6d-f40f9ac000b2)
+
 - 부모클래스의 멤버를 자식클래스에서 접근 할 수 있는지 고려해야함
   - private 멤버는 상속이 되지않고 protected, public 멤버만 상속이 가능하다.
 - final로 선언된 클래스는 상속될 수 없다.
