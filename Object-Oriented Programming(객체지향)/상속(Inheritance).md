@@ -22,3 +22,85 @@ class B extends A {
 - final로 선언된 클래스는 상속될 수 없다.
 - 계층구조관리
   - 클래스의 상속은 계층구조를 형성하기 때문에 클래스간의 관계를 명확히 관리해야한다. 잘못 사용시 클래스의 복잡성이 증가 할 수 있다.
+## 상속에서 클래스 생성과정
+### 하위클래스가 생성되는 과정
+- 하위클래스를 생성하면 상위클래스가 먼저 생성 됨
+- 따라서 클래스가 상속받은 경우 하위클래스에서 반드시 상위 클래스의 생성자를 호출해야한다.
+### 하위클래스 호출 시 상위클래스가 먼저 생성되는 예시
+<br> Parent.java
+```java
+public class Parent {
+    public Parent(){
+        System.out.println(
+                "Call Parent()"
+        );
+    }
+}
+```
+<br> Child.java
+```java
+public class Child extends Parent {
+    public Child(){        
+        System.out.println("Call Child()");
+    }
+}
+```
+<br> Main.java
+```java
+public class ExtendsTest {
+    public static void main(String[] args) {
+        Child c = new Child();
+    }
+}
+```
+
+<br> 상위클래스 생성시 Call Parent() , 하위 클래스 생성시 Call Child() 가 출력 되도록 셋팅 후 main 클래스에서 하위클래스인 Child 를 호출 해 보면 결과는 다음과 같다.
+<br> Result
+```java
+Call Parent()
+Call Child()
+```
+- 나는 분명 Child 클래스를 생성했는데 상위 클래스인 Parent 생성자가 먼저 호출되고 그 뒤 하위클래스 인 Child 생성자가 호출 된 것을 확인 할 수있다.
+
+### 하위클래스는 밥드시 상위클래스의 생성자를 호출해야한다. 의 예시
+```java
+public class Parent {
+  private String parentString;
+
+  public Parent(String parentString){
+      this.parentString = parentString;
+      System.out.println("Call Parent()");
+  }
+}
+```
+<br> Child.java
+```java
+public class Child extends Parent {
+    public Child(){        
+        System.out.println("Call Child()");
+    }
+}
+```
+<br> Main.java
+```java
+public class ExtendsTest {
+    public static void main(String[] args) {
+        Child c = new Child();
+    }
+}
+```
+- Child 클래스에서 다음과같은 오류가 뜬다 There is no default constructor available in 'example2.Parent' 
+- 앞의 예시에서는 상위클래스 Parent에서 default 생성자가 있기때문에 따로 생성자 호출을 super() 로 부모클래스의 생성자를 호출하지않아도 컴파일 과정에서 자동으로 추가해줬기 때문이다.
+- 다음과 같은 오류에서 해결방법은 2가지가 있다.
+  - 1. 상위 클래스 Parent에 default 생성자를 만들어준다.
+  - 2. 하위 클래스 Child에 super() 를 통해 상위클래스 생성자를 명시적으로 지정해준다.
+<br> super() 로 해결하는 방법
+<br> Child.java
+```java
+public class Child extends Parent {
+    public Child(){
+        super("상위클래스 스트링");        
+        System.out.println("Call Child()");
+    }
+}
+```
