@@ -93,8 +93,8 @@ public class ExtendsTest {
 - 앞의 예시에서는 상위클래스 Parent에서 default 생성자가 있기때문에 따로 생성자 호출을 super() 로 부모클래스의 생성자를 호출하지않아도 컴파일 과정에서 자동으로 추가해줬기 때문이다.
 - 다음과 같은 오류에서 해결방법은 2가지가 있다.
   - 1. 상위 클래스 Parent에 default 생성자를 만들어준다.
-  - 2. 하위 클래스 Child에 super() 를 통해 상위클래스 생성자를 명시적으로 지정해준다.
-- <b>super() 로 해결하는 방법
+  - 2. 하위 클래스 Child에 super() 를 통해 상위클래스 생성자를 명시적으로 지정해준다.<br>
+<b>super() 로 해결하는 방법
 <br> Child.java
 ```java
 public class Child extends Parent {
