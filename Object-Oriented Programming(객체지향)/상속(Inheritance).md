@@ -94,7 +94,7 @@ public class ExtendsTest {
 - 다음과 같은 오류에서 해결방법은 2가지가 있다.
   - 1. 상위 클래스 Parent에 default 생성자를 만들어준다.
   - 2. 하위 클래스 Child에 super() 를 통해 상위클래스 생성자를 명시적으로 지정해준다.<br>
-<b>super() 로 해결하는 방법
+### super() 로 해결하는 방법
 <br> Child.java
 ```java
 public class Child extends Parent {
