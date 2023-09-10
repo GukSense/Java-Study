@@ -95,7 +95,7 @@ public class ExtendsTest {
   - 1. 상위 클래스 Parent에 default 생성자를 만들어준다.
   - 2. 하위 클래스 Child에 super() 를 통해 상위클래스 생성자를 명시적으로 지정해준다.<br>
 ### super() 로 해결하는 방법
-<br> Child.java
+Child.java
 ```java
 public class Child extends Parent {
     public Child(){
@@ -104,3 +104,4 @@ public class Child extends Parent {
     }
 }
 ```
+- super() 는 상위클래스의 생성자를 호출한다. (super 는 생성된 상위클래스 인스턴스 참조 값을 가진다.)
