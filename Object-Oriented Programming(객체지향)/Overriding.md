@@ -5,7 +5,7 @@
 - 메서드위에 애노테이션 주석을 달아주어야한다. ex)  @Override
 
 ### Overring vs Overloading
-- 1.Overring
+- 1. Overring
   - 부모클래스의 메서드를 재정의하기 위해 사용
   - 메서드의 이름, 매개변수 리스트, 반환타입이 같아야한다.
 - 2. Overloading
