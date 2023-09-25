@@ -13,5 +13,36 @@
   - 메서드의 이름은 같아야하지만, 매개변수 타입,개수, 반환타입은 달라도 된다.
 
 ### 사용 예시
+부모 클래스
+```java
+  public class Parent {
+    public int add(int a, int b) {
+      int result = a + b;
+      return result; 
+    }    
+  }
+```
+자식클래스
+```java
+  public class Child extends Parent {
+    @Override
+    public int add(int a, int b) {
+      int result = a + (2*b);
+      return result; 
+    }
+  }
+```
+테스트결과
+```java
+  public class OverridingTest {
+    public static void main(String[] args) {
+        Child c = new Child();
+        System.out.println(c.add(3,5));        
+    }
+}
+```
+```
+13
+```
 
    
