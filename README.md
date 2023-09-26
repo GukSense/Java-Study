@@ -1,2 +1,2 @@
-# Java-Study
-개인적인 JavaStudy  를 위한 레파지토리
+# Today I learned
+개인적인으로 공부한것들을 정리하는 곳
