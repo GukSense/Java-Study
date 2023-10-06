@@ -7,6 +7,6 @@
 - 메서드
   - [Assertions](https://github.com/GukSense/TIL/blob/main/Java/Test/Assertions.md)
 # CS
-- 자료구조
+- [자료구조](https://github.com/GukSense/TIL/blob/main/CS/DataStructure/01.Guide.md)
    
-- 디자인 패턴
+- [디자인 패턴]()
