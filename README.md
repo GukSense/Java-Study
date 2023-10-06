@@ -10,3 +10,6 @@
 - [자료구조](https://github.com/GukSense/TIL/blob/main/CS/DataStructure/01.Guide.md)
    
 - [디자인 패턴]()
+
+# IDE
+- [IntelliJ](https://github.com/GukSense/TIL/blob/main/IDE/IntelliJ/Guide.md)
