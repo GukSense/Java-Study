@@ -25,10 +25,10 @@
 
 <br> 문제는 격리성을 완벽하게 보장할려면 트랜잭션을 거의 순서대로 실행해야한다. 하지만 이렇게 하면 동시처리 성능이 매우 나빠진다.
 <br> 이런 문제로 인해 트랜잭션 격리 수준을 4단계로 나누어 정의했다
-<br> *트랜잭션 격리 수준*
 
-<br> READ UNCOMMITED(커밋되지않은 읽기) 
-<br> READ COMMITED(커밋된 읽기)
-<br> REPEATABLE READ(반복가능한 읽기)
-<br> SERIALIZABLE(직렬화기능) 
+<br> *트랜잭션 격리 수준*
+- READ UNCOMMITED(커밋되지않은 읽기) 
+- READ COMMITED(커밋된 읽기)
+- REPEATABLE READ(반복가능한 읽기)
+- SERIALIZABLE(직렬화기능) 
 
