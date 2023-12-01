@@ -33,3 +33,27 @@
 - REPEATABLE READ(반복가능한 읽기)
 - SERIALIZABLE(직렬화기능) 
 
+
+### 자동커밋 & 수동커밋 
+- 트랜잭션에는 자동커밋과 수동커밋이 있다. 자동커밋을 하면 쿼리 실행 직후에 바로 commit이 된다. 그래서 따로 `commit` `rollback` 을 해줄 필요가없어 편리하다.<br>
+  하지만 우리가 원하는 트랜잭션 기능을 제대로 사용 할 수 없다.
+  
+ **자동커밋설정**
+```sql
+set autocommit true;
+insert into member (member_id,money) values ('data1',10000); // 자동 커밋
+insert into member (member_id,money) values ('data2',20000); // 자동 커밋
+```
+ 따라서 `commit` `rollback` 을 수동으로 호출하며 트랜잭션의 기능을 제대로 수행해야한다. 그러기 위해선 수동커밋 설정을 해야한다.
+
+ **수동커밋설정**
+ ```sql
+ set autocommit false;
+ insert into member (member_id, money) values ('data3',30000); // 수동커밋
+ insert into member (member_id, money) values ('data4',40000); // 수동커밋
+ commit;
+ ```
+  
+보통 자동커밋 모드가 기본으로 설정되어있기 때문에 *수동커밋을 설정해주는게 트랜잭션을 시작*한다고 표현 할 수 있겠다.
+수동커밋 후에는 반드시 `commit`, `rollback` 을 호출 해주어야한다. 
+
