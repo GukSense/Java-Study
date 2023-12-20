@@ -15,7 +15,7 @@
 ### 싱글톤 패턴 구현하기
 ```java
 public class Singleton {
-  private static Singleton instance  = new Singleton();
+  private static final Singleton instance  = new Singleton();
   
   private Singleton(){}
   
