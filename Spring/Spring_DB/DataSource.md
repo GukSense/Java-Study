@@ -1,3 +1,9 @@
+``
+김영한 강사님의 스프링 DB 데이터 접근핵심원리를 보고 복습을 위해 정리하였습니다. 
+``
+[강의링크](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-db-1)
+
+
 ### Connection을 획득하는 방법들
 - 1. DriverManager 를 통해 신규 Connection 객체를 생성하는 방법
   2. HikariCP 커넥션 풀 로 생성된 커넥션 조회
