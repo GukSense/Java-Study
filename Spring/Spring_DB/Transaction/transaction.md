@@ -1,6 +1,7 @@
 ``
 김영한님의 스프링 DB 1편을 수강 후 개인적으로 정리 하기 위해 작성한 글 입니다.
 ``
+[강의링크](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-db-1)
 
 ## transaction (트랜잭션)
 
