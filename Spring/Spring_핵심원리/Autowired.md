@@ -8,7 +8,7 @@
 - **생성자가 하나만 있으면, `@Autowired` 를 생략할 수 있다.**
 **사용예시**
 
-``
+```
 
     @Component
     public class MyComponent {
@@ -24,7 +24,7 @@
     }
   
 
-``
+```
 ### 필드 주입
 - 필드에 주입하는 방법.
 - 코드가 간결해지는 장점이 있다.
@@ -34,7 +34,7 @@
   - 스프링 설정을 목적으로 하는 `Configuration` 같은 곳 에서만 별도로 사용.
 **사용예시**
 
-``
+```
 
     @Component
     public class MyComponent {
@@ -45,7 +45,7 @@
     }
   
 
-``
+```
 ### 세터 주입
 - 필드 값을 변경하는 수정자 메서드를 통해 의존관계를 주입하는 방법.
 - 선택, 변경 가능성이 있는 의존관계에 사용한다.
@@ -53,8 +53,8 @@
 - `@Autowired` 는 주입 할 대상이 없으면 오류가 발생하는데, 주입 할 대상이 없어도 동작하게 할려면 `@Autowired(required = false` 로 지정해주면 된다.
 **사용예시**
 
-``
 
+```
     @Component
     public class MyComponent {
     
@@ -69,5 +69,46 @@
     }
   
 
-``
+```
+### 조회 빈이 2개 이상일때 Autowired
+#### 필드명매칭
+- Autowired 는 기본적으로 타입 매칭을 먼저하고(타입순으로 우선 조회), 같은 타입빈이 2개 이상일 경우 필드명으로 이름을 매칭한다.
+<br>**예시**
 
+```
+  
+    /* 기존코드
+    @Autowired
+    private Dependency dependency;
+    */
+    // 개선코드
+    private MyDependency firstDependency;
+    
+```
+#### @Qualifier 사용
+- 추가 구분자를 붙여주는 방법. (빈 이름을 변경하는것은 아니다.)
+<br>**빈 등록시 @Qualifier를 붙여 준다.**
+```
+@Component
+@Qualifier("mainDataSource")
+public class FirstDataSource implements Repository {}
+```
+
+```
+@Component
+@Qualifier("secondDataSource")
+public class SecondDataSource implements Repository {}
+```
+<br>**의존관계주입할때 @Qualifier를 붙여 주고 등록이름을 적어준다.**
+```
+@Autowired
+public DataService(@Qualifier("mainDataSource") Repository respository) {
+    this.respository = respository;
+}
+```
+<br>**@Qualifier 매칭순서**
+- 1. @Qualifier끼리 매칭
+  2. 없으면 빈 이름 매칭
+  3. 1번 2번 둘다 없을시 `NoSuchBeanDefinitionException` 예외 발생.
+
+#### Primary 사용
