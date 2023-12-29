@@ -8,7 +8,7 @@
 - **생성자가 하나만 있으면, `@Autowired` 를 생략할 수 있다.**
 **사용예시**
 
-```
+```java
 
     @Component
     public class MyComponent {
@@ -34,7 +34,7 @@
   - 스프링 설정을 목적으로 하는 `Configuration` 같은 곳 에서만 별도로 사용.
 **사용예시**
 
-```
+```java
 
     @Component
     public class MyComponent {
@@ -54,7 +54,7 @@
 **사용예시**
 
 
-```
+```java
     @Component
     public class MyComponent {
     
@@ -75,7 +75,7 @@
 - Autowired 는 기본적으로 타입 매칭을 먼저하고(타입순으로 우선 조회), 같은 타입빈이 2개 이상일 경우 필드명으로 이름을 매칭한다.
 <br>**예시**
 
-```
+```java
   
     /* 기존코드
     @Autowired
@@ -88,19 +88,19 @@
 #### @Qualifier 사용
 - 추가 구분자를 붙여주는 방법. (빈 이름을 변경하는것은 아니다.)
 <br>**빈 등록시 @Qualifier를 붙여 준다.**
-```
+```java
 @Component
 @Qualifier("mainDataSource")
 public class FirstDataSource implements Repository {}
 ```
 
-```
+```java
 @Component
 @Qualifier("secondDataSource")
 public class SecondDataSource implements Repository {}
 ```
 <br>**의존관계주입할때 @Qualifier를 붙여 주고 등록이름을 적어준다.**
-```
+```java
 @Autowired
 public DataService(@Qualifier("mainDataSource") Repository respository) {
     this.respository = respository;
@@ -116,7 +116,7 @@ public DataService(@Qualifier("mainDataSource") Repository respository) {
 - 같은타입의 빈 중에서 우선순위를 지정해줄 수 있다.
 - `@Qualifier` 와 달리 `@Primary` 하나만 지정해두고 의존관계 주입에서 `@Qualifier`를 명시해주지 않아도 되는 장점이 있다. 즉, 코드가 더 깔끔하다.
 <br> **예시**
-```
+```java
 @Component
 @Primary
 public class FirstDataSource implements Repository {}
