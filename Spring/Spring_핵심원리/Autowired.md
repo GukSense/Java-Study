@@ -106,9 +106,21 @@ public DataService(@Qualifier("mainDataSource") Repository respository) {
     this.respository = respository;
 }
 ```
-<br>**@Qualifier 매칭순서**
+<br>*@Qualifier 매칭순서*
 - 1. @Qualifier끼리 매칭
   2. 없으면 빈 이름 매칭
   3. 1번 2번 둘다 없을시 `NoSuchBeanDefinitionException` 예외 발생.
+  
 
-#### Primary 사용
+#### @Primary 사용
+- 같은타입의 빈 중에서 우선순위를 지정해줄 수 있다.
+- `@Qualifier` 와 달리 `@Primary` 하나만 지정해두고 의존관계 주입에서 `@Qualifier`를 명시해주지 않아도 되는 장점이 있다. 즉, 코드가 더 깔끔하다.
+<br> **예시**
+```
+@Component
+@Primary
+public class FirstDataSource implements Repository {}
+```
+#### 활용과 우선순위.
+- 메인으로 사용할 빈에는 `@Primary`을 사용하여 기본 디폴트 값을 지정해주고, 특별한 상황에 사용할 빈으로는 `@Qualifier` 지정하여 사용하는것이 코드를 깔끔하게 유지 할 수 있다.
+- 앞서 말했듯이, `@Primary` 는 기본 디폴트처럼 동작하고,`@Qualifier` 는 상세하게 동작하기 때문에 스프링은 자동보다는 수동이, 넓은선택권보다는 좁은 선택권이 우선권을 가져간다. 그래서 둘이 붙는다면 `@Qualifier` 우선권이 높다.
