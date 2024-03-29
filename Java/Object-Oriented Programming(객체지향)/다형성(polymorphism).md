@@ -6,6 +6,7 @@
 - 상위클래스 개념인 Animal.class 가 있고 하위 클래스 개념인 Person,Tiger,Eagle class 가 있다고 했을때, Animal 클래스의 move() 메서드는 특징에맞게 각 하위클래스에서 다르게 구현 할 것이다.
 <br>
 Animal.class
+
 ```java
 public class Animal {
   public void move() {
