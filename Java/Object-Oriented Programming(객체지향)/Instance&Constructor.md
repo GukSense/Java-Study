@@ -36,7 +36,7 @@ class Tv {
      }
      public static void main(String[] args) {
       Tv t = new Tv()    // class Tv 에는 생성자 메서드가 없지만 public Tv(){} 를 컴파일러가 자동으로 생성해주기때문
-     tv.channel = 6;
+      tv.channel = 6;
      }
      ```
 - 클래스에 임의로 생성자를 만들었다면 그에 맞게 생성자를 호출 해 주어야한다.
